@@ -14,3 +14,6 @@ jobs:
     steps:
       - name: Run a one-line script
         run: python --version
+
+      - name: Run a one-line script
+        run: ls
