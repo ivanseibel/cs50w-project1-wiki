@@ -26,7 +26,7 @@ jobs:
         - name: Install Dependencies
           run: pip3 install -r requirements.txt
         - name: Check environment variables
-          run: echo "$SECRET_KEY"
+          run: printenv SECRET_KEY
         - name: Collect Static
           run: python3 manage.py collectstatic
 #         - name: Make Migrations
