@@ -14,6 +14,8 @@ defaults:
 jobs:
   job1:
       environment: production-gcloud
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       runs-on: ubuntu-latest
       name: Git Deploy job- A job to deploy django app
       steps:
@@ -25,8 +27,6 @@ jobs:
           run: python3 --version
         - name: Install Dependencies
           run: pip3 install -r requirements.txt
-        - name: Check environment variables
-          run: printenv SECRET_KEY
         - name: Collect Static
           run: python3 manage.py collectstatic
 #         - name: Make Migrations
