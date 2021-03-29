@@ -7,14 +7,15 @@ on:
     branches: [ master ]
     
   workflow_dispatch:
-
+  
 defaults:
   run:
     working-directory: ./
 jobs:
   job1:
+      environment: production-gcloud
       runs-on: ubuntu-latest
-      name: Git Deploy job- A job to deploy django app to heroku using git
+      name: Git Deploy job- A job to deploy django app
       steps:
         - name: Checkout
           uses: actions/checkout@v2
