@@ -21,4 +21,4 @@ jobs:
         - name: List directory
           run: ls
         - name: Install Dependencies
-          run: python --version
+          run: pip install -r requirements.txt
