@@ -23,7 +23,7 @@ jobs:
         - name: Check Python Version
           run: python3 --version
         - name: Install Dependencies
-          run: pip3install -r requirements.txt
+          run: pip3 install -r requirements.txt
         - name: Collect Static
           run: python3 manage.py collectstatic
 #         - name: Make Migrations
