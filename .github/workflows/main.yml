@@ -20,11 +20,13 @@ jobs:
           uses: actions/checkout@v2
         - name: List directory
           run: ls
-        - name: Install Dependencies
-          run: pip install -r requirements.txt
-        - name: Make Migrations
-          run: python manage.py makemigrations
-        - name: Make Migrations Encyclopedia
-          run: python manage.py makemigrations encyclopedia
-        - name: Migrate
-          run: python manage.py migrate
+        - name: Check Python Version
+          run: python3 --version
+#         - name: Install Dependencies
+#           run: pip install -r requirements.txt
+#         - name: Make Migrations
+#           run: python manage.py makemigrations
+#         - name: Make Migrations Encyclopedia
+#           run: python manage.py makemigrations encyclopedia
+#         - name: Migrate
+#           run: python manage.py migrate
