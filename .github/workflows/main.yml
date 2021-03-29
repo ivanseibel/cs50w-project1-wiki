@@ -1,0 +1,34 @@
+name: GAE Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./
+jobs:
+  job1:
+      runs-on: ubuntu-latest
+      name: Git Deploy job- A job to deploy django app to heroku using git
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: List directory
+          run: ls
+        - name: Check Python Version
+          run: python3 --version
+        - name: Install Dependencies
+          run: pip3 install -r requirements.txt
+        - name: Collect Static
+          run: python3 manage.py collectstatic
+#         - name: Make Migrations
+#           run: python manage.py makemigrations
+#         - name: Make Migrations Encyclopedia
+#           run: python manage.py makemigrations encyclopedia
+#         - name: Migrate
+#           run: python manage.py migrate
