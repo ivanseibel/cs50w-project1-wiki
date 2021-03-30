@@ -15,7 +15,7 @@ Design a Wikipedia-like online encyclopedia.
 
 ## Demo
 
-[Online Demo](#) :construction:
+[Online Demo](https://cs50w-2021.uc.r.appspot.com/)
 
 ## **Background**
 
