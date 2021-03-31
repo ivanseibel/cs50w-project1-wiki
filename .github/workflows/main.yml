@@ -32,6 +32,9 @@ jobs:
       - name: Collect Static
         run: python3 manage.py collectstatic
       
+      - name: List All Files
+        run: ls
+      
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1
         with:
