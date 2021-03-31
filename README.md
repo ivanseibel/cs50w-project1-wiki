@@ -7,11 +7,22 @@ Design a Wikipedia-like online encyclopedia.
 - [x] Entry Page: render a page that displays the contents of that encyclopedia entry
 - [x] Search: allow user to search for an encyclopedia entry
 - [x] Index Page: user can click on any entry name to be taken directly to that entry page
-- [ ] CI/CD Google Cloud :construction: :construction_worker: :construction:
+- [x] CI/CD Google Cloud
+- [x] Demo publishing
+- [ ] New Page: take user to create a new encyclopedia entry :construction: :construction_worker: :construction:
+- [ ] CI/CD AWS
 - [ ] CI/CD Heroku
-- [ ] Demo publishing
-- [ ] New Page: take user to create a new encyclopedia entry
 - [ ] Edit Page: take user to edit an existing  entry file
+
+## TODO
+
+- Understand best way to deploy/mantain db.sqlite3 django database 
+
+## Deploy Workflow
+
+- [Gcloud App Engine](https://github.com/ivanseibel/cs50w-project1-wiki/actions/workflows/main.yml)
+- [AWS](#) :construction:
+- [Heroku](#) :construction:
 
 ## Demo
 
