@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Git Deploy job- A job to deploy django app
     steps:
-      - id: Get Credentials
+      - id: GetCredentials
         uses: google-github-actions/deploy-appengine@main
         with:
           credentials: ${{ secrets.GCP_SA_KEY }}
