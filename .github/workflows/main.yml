@@ -30,6 +30,8 @@ jobs:
         run: pip3 install -r requirements.txt
       - name: Collect Static
         run: python3 manage.py collectstatic
+      - name: Update app.yml
+        run: echo ${{ secrets.APP_YAML }} > app.yaml
       - id: Deploy
         uses: google-github-actions/deploy-appengine@main
         with:
