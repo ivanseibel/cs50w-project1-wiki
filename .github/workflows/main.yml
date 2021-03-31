@@ -13,25 +13,23 @@ defaults:
     working-directory: ./
 jobs:
   job1:
-      environment: production-gcloud
-      env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      runs-on: ubuntu-latest
-      name: Git Deploy job- A job to deploy django app
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        - name: List directory
-          run: ls
-        - name: Check Python Version
-          run: python3 --version
-        - name: Install Dependencies
-          run: pip3 install -r requirements.txt
-        - name: Collect Static
-          run: python3 manage.py collectstatic
-#         - name: Make Migrations
-#           run: python manage.py makemigrations
-#         - name: Make Migrations Encyclopedia
-#           run: python manage.py makemigrations encyclopedia
-#         - name: Migrate
-#           run: python manage.py migrate
+    environment: production-gcloud
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    runs-on: ubuntu-latest
+    name: Git Deploy job- A job to deploy django app
+    steps:
+      - id: Get Credentials
+        uses: google-github-actions/deploy-appengine@main
+        with:
+          credentials: ${{ secrets.GCP_SA_KEY }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: List directory
+        run: ls
+      - name: Check Python Version
+        run: python3 --version
+      - name: Install Dependencies
+        run: pip3 install -r requirements.txt
+      - name: Collect Static
+        run: python3 manage.py collectstatic
