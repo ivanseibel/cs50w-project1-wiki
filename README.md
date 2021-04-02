@@ -18,7 +18,6 @@ Design a Wikipedia-like online encyclopedia.
 
 ## TODO
 
-- Understand best way to deploy/mantain db.sqlite3 django database 
 
 ## Deploy Workflow
 
