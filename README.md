@@ -30,6 +30,8 @@ Design a Wikipedia-like online encyclopedia.
 
 [Online Demo](https://cs50w-2021.uc.r.appspot.com/)
 
+**Note:** Right now create and edit functions aren't working because Google App Engine doesn't provide access to the filesystem.
+
 ## **Background**
 
 [Wikipedia](https://www.wikipedia.org/) is a free online encyclopedia that consists of a number of encyclopedia entries on various topics.
