@@ -37,6 +37,9 @@ jobs:
 
       - name: Migrate
         run: python manage.py migrate
+      
+      - name: Change db.sqlite3 permissions
+        run: sudo chmod 777 db.sqlite3
 
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1
