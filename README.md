@@ -30,7 +30,7 @@ Design a Wikipedia-like online encyclopedia.
 
 [Online Demo](https://cs50w-2021.uc.r.appspot.com/)
 
-**Note:** Right now create and edit functions aren't working because Google App Engine doesn't provide access to the filesystem.
+**Note:** Right now admin login, create and edit functions aren't working because Google App Engine doesn't provide access to the filesystem.
 
 ## **Background**
 
