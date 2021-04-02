@@ -75,7 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wiki.wsgi.application'
 
-SESSION_ENGINE="django.contrib.sessions.backends.file"
+# SESSION_ENGINE="django.contrib.sessions.backends.file"
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
