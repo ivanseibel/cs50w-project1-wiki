@@ -9,10 +9,12 @@ Design a Wikipedia-like online encyclopedia.
 - [x] Index Page: user can click on any entry name to be taken directly to that entry page
 - [x] CI/CD Google Cloud
 - [x] Demo publishing
-- [ ] New Page: take user to create a new encyclopedia entry :construction: :construction_worker: :construction:
+- [x] Admin login: create admin session
+- [x] Only admin can create/edit
+- [x] New Page: take user to create a new encyclopedia entry
+- [ ] Edit Page: take user to edit an existing  entry file :construction: :construction_worker: :construction:
 - [ ] CI/CD AWS
 - [ ] CI/CD Heroku
-- [ ] Edit Page: take user to edit an existing  entry file
 
 ## TODO
 
