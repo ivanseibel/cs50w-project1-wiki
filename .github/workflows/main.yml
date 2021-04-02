@@ -31,14 +31,12 @@ jobs:
         
       - name: Collect Static
         run: python3 manage.py collectstatic
-      
-      - name: List All Files
-        run: ls
-      
+     
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          envkey_ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         
       - id: Deploy
         uses: google-github-actions/deploy-appengine@main
