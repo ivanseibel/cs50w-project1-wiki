@@ -27,7 +27,9 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-  'cs50w-2021.uc.r.appspot.com'
+  'cs50w-2021.uc.r.appspot.com',
+  'localhost',
+  '127.0.0.1'
 ]
 
 
