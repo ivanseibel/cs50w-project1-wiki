@@ -38,9 +38,6 @@ jobs:
           envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
           envkey_ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         
-      - name: Make entries folder writable
-        run: sudo chmod 775 entries
-        
       - id: Deploy
         uses: google-github-actions/deploy-appengine@main
         with:
