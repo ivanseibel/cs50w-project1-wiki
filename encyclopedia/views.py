@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from markdown2 import Markdown
+from decouple import config
 
 from . import util
 
@@ -36,7 +37,7 @@ def search(request):
     exists = search_key in entries
     
     if exists:
-        return title(request, search_key)
+        return redirect('title', title=search_key)
 
     filtered_entries = [entry for entry in entries if not entry.find(search_key) == -1]
 
@@ -44,3 +45,59 @@ def search(request):
         "entries": filtered_entries
     })
 
+def new(request):
+    if request.method == 'GET':
+        return render(request, "encyclopedia/new.html")
+    
+    if request.method == 'POST':
+        if not "is-admin" in request.session:
+            return render(request, "encyclopedia/fail.html", {
+                "message": "Forbidden",
+                "description": "You have to connect as an admin",
+                "status": 403
+            }) 
+
+        file_content = request.POST.get("content","")
+        file_title = request.POST.get("title", "")
+
+        if (len(file_content) == 0 or len(file_title) == 0):
+            return render(request, "encyclopedia/fail.html", {
+                "message": "Bad Request",
+                "description": "Title and content cannot be empty",
+                "status": 400
+            }) 
+
+        if util.get_entry(file_title):
+            return render(request, "encyclopedia/fail.html", {
+                "message": "Bad Request",
+                "description": "This page already exists",
+                "status": 400
+            }) 
+
+        util.save_entry(file_title, file_content)
+
+        return redirect('title', title=file_title)
+
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'encyclopedia/login.html')
+
+    if request.method == 'POST':
+        password = request.POST.get("password", "")
+        
+        is_admin = password == config("ADMIN_PASSWORD")
+        
+        if not is_admin:
+            return render(request, "encyclopedia/fail.html", {
+                "message": "Unauthorized",
+                "description": "Wrong password",
+                "status": 401
+            }) 
+
+    request.session["is-admin"] = True
+
+    return redirect('index')
+
+def logoff(request):
+    del request.session["is-admin"]
+    return redirect('index')    
