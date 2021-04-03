@@ -5,8 +5,8 @@ Design a Wikipedia-like online encyclopedia.
 ## **Status: :construction: UNDER CONSTRUCTION :construction:**
 
 - [x] Entry Page: render a page that displays the contents of that encyclopedia entry
-- [x] Search: allow user to search for an encyclopedia entry
 - [x] Index Page: user can click on any entry name to be taken directly to that entry page
+- [x] Search: allow user to search for an encyclopedia entry
 - [x] New Page: take user to create a new encyclopedia entry
 - [x] Edit Page: take user to edit an existing  entry file
 - [ ] Random Page: take user to a random encyclopedia entry :construction: :construction_worker: :construction:
