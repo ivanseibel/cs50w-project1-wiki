@@ -12,12 +12,14 @@ Design a Wikipedia-like online encyclopedia.
 - [x] Admin login: create admin session
 - [x] Only admin can create/edit
 - [x] New Page: take user to create a new encyclopedia entry
-- [ ] Edit Page: take user to edit an existing  entry file :construction: :construction_worker: :construction:
+- [x] Edit Page: take user to edit an existing  entry file
+- [x] Random Page: take user to a random encyclopedia entry :construction: :construction_worker: :construction:
 - [ ] CI/CD AWS
 - [ ] CI/CD Heroku
 
 ## TODO
 
+- Nothing for now.
 
 ## Deploy Workflow
 
