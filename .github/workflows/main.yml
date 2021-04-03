@@ -28,9 +28,6 @@ jobs:
       - name: Install Dependencies
         run: pip3 install -r requirements.txt
         
-      - name: Collect Static
-        run: python3 manage.py collectstatic
-
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1
         with:
@@ -38,6 +35,9 @@ jobs:
           envkey_ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           envkey_DEBUG_MODE: 0
         
+      - name: Collect Static
+        run: python3 manage.py collectstatic
+
       - id: Deploy
         uses: google-github-actions/deploy-appengine@main
         with:
