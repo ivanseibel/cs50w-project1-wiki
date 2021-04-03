@@ -36,6 +36,7 @@ jobs:
         with:
           envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
           envkey_ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          envkey_DEBUG_MODE: 0
         
       - id: Deploy
         uses: google-github-actions/deploy-appengine@main
