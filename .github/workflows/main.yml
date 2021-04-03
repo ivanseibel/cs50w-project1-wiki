@@ -34,7 +34,8 @@ jobs:
           envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
           envkey_ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           envkey_DEBUG_MODE: 0
-        
+          envkey_ALLOWED_HOSTS: 'cs50w-2021.uc.r.appspot.com'
+
       - name: Collect Static
         run: python3 manage.py collectstatic
 

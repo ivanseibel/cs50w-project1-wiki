@@ -26,12 +26,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG_MODE")
 
-ALLOWED_HOSTS = [
-  'cs50w-2021.uc.r.appspot.com',
-  'localhost',
-  '127.0.0.1'
-]
-
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(',')
 
 # Application definition
 
