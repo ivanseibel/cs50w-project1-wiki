@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from markdown2 import Markdown
 from decouple import config
+from random import choice 
 
 from . import util
 
@@ -140,13 +141,13 @@ def edit(request, title):
                 "status": 400
             }) 
 
-        # if util.get_entry(file_title):
-        #     return render(request, "encyclopedia/fail.html", {
-        #         "message": "Bad Request",
-        #         "description": "This page already exists",
-        #         "status": 400
-        #     }) 
-
         util.save_entry(file_title, file_content)
 
         return redirect('title', title=file_title)    
+
+def random(request):
+    entries = util.list_entries()
+    selected_choice = choice(entries)
+    
+    return redirect('title', title=selected_choice)
+    
