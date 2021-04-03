@@ -9,7 +9,7 @@ Design a Wikipedia-like online encyclopedia.
 - [x] Search: allow user to search for an encyclopedia entry
 - [x] New Page: take user to create a new encyclopedia entry
 - [x] Edit Page: take user to edit an existing  entry file
-- [ ] Random Page: take user to a random encyclopedia entry :construction: :construction_worker: :construction:
+- [x] Random Page: take user to a random encyclopedia entry
 
 ## **TODO**
 
@@ -19,13 +19,13 @@ Some extra features to improve the project.
 - [x] Demo publishing
 - [x] Admin login: create admin session
 - [x] Only admin can create/edit
-- [ ] CI/CD AWS
+- [ ] CI/CD AWS :construction: :construction_worker: :construction:
 - [ ] CI/CD Heroku
 
 
 ## **Deploy Workflow**
 
-- [Gcloud App Engine](https://github.com/ivanseibel/cs50w-project1-wiki/actions/workflows/main.yml)
+- [GCloud App Engine](https://github.com/ivanseibel/cs50w-project1-wiki/actions/workflows/main.yml) ✅
 - [AWS](#) :construction:
 - [Heroku](#) :construction:
 
