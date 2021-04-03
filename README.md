@@ -13,7 +13,7 @@ Design a Wikipedia-like online encyclopedia.
 - [x] Only admin can create/edit
 - [x] New Page: take user to create a new encyclopedia entry
 - [x] Edit Page: take user to edit an existing  entry file
-- [x] Random Page: take user to a random encyclopedia entry :construction: :construction_worker: :construction:
+- [ ] Random Page: take user to a random encyclopedia entry :construction: :construction_worker: :construction:
 - [ ] CI/CD AWS
 - [ ] CI/CD Heroku
 
