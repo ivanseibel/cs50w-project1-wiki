@@ -8,5 +8,6 @@ urlpatterns = [
     path("search/", views.search, name="search"),
     path("new/", views.new, name="new"),
     path("login/", views.login, name="login"),
-    path("logoff/", views.logoff, name="logoff")
+    path("logoff/", views.logoff, name="logoff"),
+    path("edit/<str:title>", views.edit, name="edit"),
 ]
