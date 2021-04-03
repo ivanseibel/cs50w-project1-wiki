@@ -13,7 +13,7 @@ Design a Wikipedia-like online encyclopedia.
 
 ## **TODO**
 
-Some extra features.
+Some extra features to improve the project.
 
 - [x] CI/CD Google Cloud
 - [x] Demo publishing
