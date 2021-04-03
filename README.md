@@ -2,7 +2,7 @@
 
 Design a Wikipedia-like online encyclopedia.
 
-## **Status: :construction: UNDER CONSTRUCTION :construction:**
+## **Status: FINISHED** 🎉🎉🎉
 
 - [x] Entry Page: render a page that displays the contents of that encyclopedia entry
 - [x] Index Page: user can click on any entry name to be taken directly to that entry page
@@ -19,6 +19,7 @@ Some extra features to improve the project.
 - [x] Demo publishing
 - [x] Admin login: create admin session
 - [x] Only admin can create/edit
+- [ ] Add option to parse Markdown2HTML using regex
 - [ ] CI/CD AWS :construction: :construction_worker: :construction:
 - [ ] CI/CD Heroku
 
