@@ -47,7 +47,7 @@ def search(request):
 
 def new(request):
     if request.method == 'GET':
-        return render(request, "encyclopedia/new.html")
+        return render(request, "encyclopedia/editor.html")
     
     if request.method == 'POST':
         if not "is-admin" in request.session:
@@ -101,3 +101,52 @@ def login(request):
 def logoff(request):
     del request.session["is-admin"]
     return redirect('index')    
+
+
+def edit(request, title):
+    if request.method == 'GET':
+
+        wiki_page = util.get_entry(title)
+
+        if (not wiki_page):
+            return render(request, "encyclopedia/fail.html", {
+              "message": "Not Found",
+              "status": 404
+            })
+
+        return render(request, "encyclopedia/editor.html", {
+            "title": title,
+            "md_page": wiki_page
+        })
+
+    if request.method == 'POST':
+        if not "is-admin" in request.session:
+            return render(request, "encyclopedia/fail.html", {
+                "message": "Forbidden",
+                "description": "You have to connect as an admin",
+                "status": 403
+            }) 
+
+        file_content = request.POST.get("content","")
+        file_title = request.POST.get("title", "")
+
+        print(file_content)
+        print(file_title)
+
+        if (len(file_content) == 0 or len(file_title) == 0):
+            return render(request, "encyclopedia/fail.html", {
+                "message": "Bad Request",
+                "description": "Title and content cannot be empty",
+                "status": 400
+            }) 
+
+        # if util.get_entry(file_title):
+        #     return render(request, "encyclopedia/fail.html", {
+        #         "message": "Bad Request",
+        #         "description": "This page already exists",
+        #         "status": 400
+        #     }) 
+
+        util.save_entry(file_title, file_content)
+
+        return redirect('title', title=file_title)    
